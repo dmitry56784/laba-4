@@ -1,10 +1,15 @@
 import datetime
 
 def get_next_lucky_date(date, n):
+  """Возвращает следующую подходящую дату экзамена."""
+
+  # Преобразуем дату в объект datetime
   date = datetime.datetime.strptime(date, "%Y/%m/%d")
+
+  # Устанавливаем флаг, указывающий, что мы нашли подходящую дату
   found = False
 
-
+  # Перебираем дни, пока не найдем подходящую дату
   while not found:
     # Прибавляем к дате n дней
     date += datetime.timedelta(days=n)
